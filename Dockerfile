@@ -10,3 +10,5 @@ RUN echo "deb     http://repos.sensuapp.org/apt sensu main" > /etc/apt/sources.l
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y sensu supervisor
 ADD files/supervisord.conf /etc/supervisor/conf.d/base.conf
+
+CMD /usr/bin/supervisord
